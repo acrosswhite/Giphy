@@ -1,22 +1,24 @@
-       var giphs = ["confused", "bored", "sarcastic", "excited"];
+       var giphs = ["bored"];
 
       // displayMovieInfo function re-renders the HTML to display the appropriate content
       function displayEmotionsGif() {
 
         var emotions = $(this).attr("data-name");
-        var queryURL = "https://api.giphy.com/v1/gifs/random?api_key=9b203687108545728e67856c167e9113&tag=" + giphs[0];
+        var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + emotions + "&api_key=9b203687108545728e67856c167e9113&limit=10";
 
         // Creating an AJAX call for the specific movie button being clicked
         $.ajax({
           url: queryURL,
           method: "GET"
+          //number of gifs display is 10
+          //static gifs
         }).done(function(response) {
 
           // Creating a div to hold the movie
           var emotionDiv = $("<div class='emotion'>");
 
           // Retrieving the URL for the image
-          var imgURL = response.Poster;
+          var imgURL = response.data.image_url;
 
           // Creating an element to hold the image
           var image = $("<img>").attr("src", imgURL);
@@ -65,10 +67,12 @@
 
         // Calling renderButtons which handles the processing of our movie array
         renderButtons();
+
+         // Adding a click event listener to all elements with a class of "movie"
+      $(document).on("click", displayEmotionsGif);
       });
 
-      // Adding a click event listener to all elements with a class of "movie"
-      $(document).on("click", ".emotion", displayEmotionsGif);
+     
 
       // Calling the renderButtons function to display the intial buttons
       renderButtons();
