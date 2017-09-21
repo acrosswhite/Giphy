@@ -5,7 +5,7 @@ h1{
 }
 
 .container {
-	max-width: 500px;
+	max-width: 750px;
 	margin: auto;
 }
 
@@ -27,5 +27,11 @@ h1{
 #emotion-input {
 	padding: 10px;
 	text-align: center;
+}
+
+.emotion {
+	display: inline-block;
+    margin: 20px;
+    border: 3px solid darkgrey; 
 }
 
