@@ -4,7 +4,7 @@
       function displayEmotionsGif() {
 
         var emotions = $(this).attr("data-name");
-        var queryURL = "https://www.giphy.com" + emotions + "9b203687108545728e67856c167e9113";
+        var queryURL = "https://api.giphy.com/v1/gifs/random?api_key=9b203687108545728e67856c167e9113&tag=" + giphs[0];
 
         // Creating an AJAX call for the specific movie button being clicked
         $.ajax({
@@ -42,7 +42,7 @@
 
           // Then dynamicaly generating buttons for each movie in the array
           // This code $("<button>") is all jQuery needs to create the beginning and end tag. (<button></button>)
-          var a = $("<button>");
+          var a = $("<button/>");
           // Adding a class of movie to our button
           a.addClass("emotion");
           // Adding a data-attribute
@@ -68,7 +68,7 @@
       });
 
       // Adding a click event listener to all elements with a class of "movie"
-      $(document).on("click", ".movie", displayEmotionsGif);
+      $(document).on("click", ".emotion", displayEmotionsGif);
 
       // Calling the renderButtons function to display the intial buttons
       renderButtons();
