@@ -1,0 +1,31 @@
+
+h1{
+	color: darkgrey;
+	text-align: center;
+}
+
+.container {
+	max-width: 500px;
+	margin: auto;
+}
+
+#emotion-form{
+	margin: 0px;
+	color: darkgrey;
+	text-align: center;
+}
+
+#add-emotion {
+	background-color: snow;
+	color: darkgrey;
+	border-color: darkgrey;
+	padding: 10px;
+	margin: 30px, 10px, 10px, 10px;
+	text-align: center;
+}
+
+#emotion-input {
+	padding: 10px;
+	text-align: center;
+}
+
