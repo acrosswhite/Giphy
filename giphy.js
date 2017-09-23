@@ -81,7 +81,6 @@ function renderButtons() {
     $("#buttons-view").append(giphyButton);
     $(giphyButton).click(displayEmotionsGif);
   }
-  // $(document).on("click", ".emotion", displayEmotionsGif);
 }
 
 // button click event
